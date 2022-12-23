@@ -113,7 +113,8 @@ header {
     height: 100%;
     width: 315px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    color: var(--tg-theme-text-color);
 }
 
 .numbers__wrap > span {
@@ -126,6 +127,7 @@ header {
 
 .header__wrap {
     font-size: 30px;
+    color: var(--tg-theme-text-color);
 }
 
 .wrap {
