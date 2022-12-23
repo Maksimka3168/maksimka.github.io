@@ -6,14 +6,11 @@ body {
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--tg-theme-button-color);
 }
 
 .slider-container {
-    max-width: 390px;
-    min-width: 390px;
-    min-height: 250px;
-    max-height: 250px;
+    width: 390px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +28,7 @@ a {
 
 .slider__label{
     text-align: center;
+    color: var(--tg-theme-button-color);
 }
 
 .slider::-webkit-slider-thumb{
@@ -66,6 +64,7 @@ a {
     justify-content: space-between;
     font-size: 10px;
     margin-top: 3px;
+    color: var(--tg-theme-button-color);
 }
 
 
