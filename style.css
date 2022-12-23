@@ -49,7 +49,7 @@ header {
     -webkit-appearance: none;
     height: 20px;
     width: 300px;
-    border: 1px solid #000000;
+    border: 1px solid var(--tg-theme-button-color);
     border-radius: 20px;
 }
 
@@ -58,8 +58,8 @@ header {
     appearance: none;
     width: 25px;
     height: 60px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
+    background: var(--tg-theme-bg-color);
+    border: 1px solid var(--tg-theme-button-color);
     border-radius: 15px;
     cursor: pointer; /* Cursor on hover */
 }
@@ -68,8 +68,8 @@ header {
     -webkit-appearance: none;
     width: 25px;
     height: 60px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
+    background: var(--tg-theme-bg-color);
+    border: 1px solid var(--tg-theme-button-color);
     border-radius: 15px;
     cursor: pointer; /* Cursor on hover */
 }
@@ -98,7 +98,7 @@ header {
 .line {
     height: 10px;
     width: 0.5px;
-    background-color: black;
+    background-color: var(--tg-theme-bg-color);
 
 }
 
