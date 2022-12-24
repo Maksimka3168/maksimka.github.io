@@ -1,9 +1,9 @@
-const slider = document.getElementById("myRange");
-const output = document.getElementById("slider__count");
-const tg = tg = window.Telegram.WebApp;
+let slider = document.getElementById("myRange");
+let output = document.getElementById("slider__count");
+let tg = tg = window.Telegram.WebApp;
 
 output.innerHTML = slider.value; 
-tg.MainButton.show()
+tg.MainButton.show();
 tg.MainButton.text = "Подтвердить и продолжить";
 
 slider.oninput = function() {
