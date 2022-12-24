@@ -1,6 +1,6 @@
 let slider = document.getElementById("myRange");
 let output = document.getElementById("slider__count");
-let tg = tg = window.Telegram.WebApp;
+let tg = window.Telegram.WebApp;
 
 output.innerHTML = slider.value; 
 tg.MainButton.show();
