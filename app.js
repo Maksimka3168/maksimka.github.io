@@ -11,5 +11,6 @@ slider.oninput = function() {
 }
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	output.innerHTML = "22";
 	tg.sendData(slider.value); 
 });
