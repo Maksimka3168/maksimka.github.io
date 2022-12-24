@@ -1,8 +1,15 @@
-var slider = document.getElementById("myRange");
-var output = document.getElementById("slider__count");
-output.innerHTML = slider.value; // Display the default slider value
+const slider = document.getElementById("myRange");
+const output = document.getElementById("slider__count");
+const tg = tg = window.Telegram.WebApp;
 
-// Update the current slider value (each time you drag the slider handle)
+output.innerHTML = slider.value; 
+tg.MainButton.show()
+tg.MainButton.text = "Подтвердить и продолжить";
+
 slider.oninput = function() {
     output.innerHTML = this.value;
 }
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	tg.sendData(output.innerHTML); 
+});
