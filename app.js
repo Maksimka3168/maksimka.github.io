@@ -6,6 +6,7 @@ output.innerHTML = slider.value;
 tg.MainButton.show();
 tg.MainButton.text = "Подтвердить и продолжить";
 
+
 slider.oninput = function() {
     output.innerHTML = this.value;
 }
