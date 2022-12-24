@@ -57,7 +57,6 @@ header {
     appearance: none;
     width: 25px;
     height: 60px;
-    background: var(--tg-theme-bg-color);
     border: 1px solid var(--tg-theme-button-color);
     border-radius: 15px;
     cursor: pointer; /* Cursor on hover */
@@ -67,7 +66,6 @@ header {
     -webkit-appearance: none;
     width: 25px;
     height: 60px;
-    background: var(--tg-theme-bg-color);
     border: 1px solid var(--tg-theme-button-color);
     border-radius: 15px;
     cursor: pointer; /* Cursor on hover */
@@ -97,8 +95,7 @@ header {
 .line {
     height: 10px;
     width: 0.5px;
-    background-color: var(--tg-theme-bg-color);
-
+    background-color: var(--tg-theme-text-color);
 }
 
 .slider-numbers {
