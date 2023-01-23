@@ -1,6 +1,9 @@
 const urlData = document.location.search;
 const searchParams = new URLSearchParams(urlData);
 
+const testElement = document.getElementById("test_el")
+testElement.innerText = "2222"
+
 function generate_pages(pages){
     const blockDiv = document.getElementById("itc-slider__items")
     for (let i = 1; i <= pages; i++){
