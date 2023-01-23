@@ -638,12 +638,16 @@ h1{
 }
 
 .form__input-height{
-    font-weight: 300px;
+    font-weight: 300;
     height: 30px;
     border-bottom: 1px solid #6b6b6b;
 }
 
-
+@media (max-width: 450px) {
+    .container{
+        width: 370px;
+    }
+}
 
 
 
