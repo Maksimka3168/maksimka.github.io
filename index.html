@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="itc-slider.css">
@@ -11,90 +12,88 @@
     <script src="js.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="block-profile" id="profile">
-            <header>
-                <div class="container">
-                    <div class="header__wrap">
-                        <div class="upper__header">
-                            <h3>Начальная страница</h3>
-                            <p>Logoname</p>
-                        </div>
-                    </div>
-                </div>
-            </header>
+    <div class="block-profile" id="profile">
+        <header>
             <div class="container">
-                <div class="block-profile__wrapper">
-                    <h1>Профиль</h1>
+                <div class="header__wrap">
+                    <div class="upper__header">
+                        <h3>Начальная страница</h3>
+                        <p>Logoname</p>
+                    </div>
                 </div>
             </div>
+        </header>
+        <div class="container">
+            <div class="block-profile__wrapper">
+                <h1>Профиль</h1>
+            </div>
         </div>
-        <div class="block-start-register" id="block-start-register">
-            <header>
-                <div class="container">
-                    <div class="header__wrap">
-                        <div class="upper__header">
-                            <h3>Начальная страница</h3>
-                            <span id="test_el"></span>
-                            <p>Logoname</p>
-                        </div>
+    </div>
+    <div class="block-start-register" id="block-start-register">
+        <header>
+            <div class="container">
+                <div class="header__wrap">
+                    <div class="upper__header">
+                        <h3>Начальная страница</h3>
+                        <span id="test_el"></span>
+                        <p>Logoname</p>
                     </div>
                 </div>
-            </header>
-            <main class="block-start-register__main">
-                <div class="container">
-                    <div class="main__wrap">
-                        <div class="icon">
-                            <img src="icon.png" alt="icon">
-                        </div>
-                    </div>
-                    <div class="main-content__wrap">
-                        <h1>Добро пожаловать!</h1>
-                        <h3>Приступайте к заполнению<br> вашего профиля прямо здесь и<br> сейчас.</h3>
+            </div>
+        </header>
+        <main class="block-start-register__main">
+            <div class="container">
+                <div class="main__wrap">
+                    <div class="icon">
+                        <img src="icon.png" alt="icon">
                     </div>
                 </div>
-            </main>
-            <footer class="block-end-register__main">
-                <div class="container">
-                    <div class="footer__wrap">
-                        <div class="btn__register" id="start_register">Погнали!</div>
-                    </div>
+                <div class="main-content__wrap">
+                    <h1>Добро пожаловать!</h1>
+                    <h3>Приступайте к заполнению<br> вашего профиля прямо здесь и<br> сейчас.</h3>
                 </div>
-            </footer>
-        </div>
-        <div class="block-register" id="register">
-            <main>
-                <div class="container">
-                    <div class="itc-slider" data-slider="itc-slider" data-loop="true" data-autoplay="false">
-                        <header>
-                            <div class="container">
-                                <div class="header__wrap">
-                                    <div class="upper__header">
-                                        <h3>Заполнение профиля</h3>
-                                        <p>Logoname</p>
-                                    </div>
-                                    <div class="lower__header" >
-                                        <ol class="itc-slider__indicators" id="itc-slider__ind">
+            </div>
+        </main>
+        <footer class="block-end-register__main">
+            <div class="container">
+                <div class="footer__wrap">
+                    <div class="btn__register" id="start_register">Погнали!</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="block-register" id="register">
+        <main>
+            <div class="container">
+                <div class="itc-slider" data-slider="itc-slider" data-loop="true" data-autoplay="false">
+                    <header>
+                        <div class="container">
+                            <div class="header__wrap">
+                                <div class="upper__header">
+                                    <h3>Заполнение профиля</h3>
+                                    <p>Logoname</p>
+                                </div>
+                                <div class="lower__header" >
+                                    <ol class="itc-slider__indicators" id="itc-slider__ind">
 
 
-                                        </ol>
-                                    </div>
+                                    </ol>
                                 </div>
                             </div>
-                        </header>
-                        <div class="itc-slider__wrapper">
-                            <div class="itc-slider__items" id="itc-slider__items">
-                            </div>
                         </div>
-                        <div class="button__wraper">
-                            <button class="itc-slider__btn itc-slider__btn_prev"></button>
-                            <button class="itc-slider__btn itc-slider__btn_next"></button>
+                    </header>
+                    <div class="itc-slider__wrapper">
+                        <div class="itc-slider__items" id="itc-slider__items">
                         </div>
                     </div>
-
+                    <div class="button__wraper">
+                        <button class="itc-slider__btn itc-slider__btn_prev"></button>
+                        <button class="itc-slider__btn itc-slider__btn_next"></button>
+                    </div>
                 </div>
-            </main>
-        </div>
+
+            </div>
+        </main>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="tg.js"></script>

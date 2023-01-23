@@ -618,7 +618,7 @@ h1{
     color: #FFFFFF;
     cursor: pointer;
     background: #71C2EF;
-    margin-bottom: 178px;
+    margin-bottom: 30px;
 }
 
 .btn__register:hover{
@@ -643,17 +643,5 @@ h1{
     border-bottom: 1px solid #6b6b6b;
 }
 
-@media (max-width: 450px) {
-    .container{
-        width: 370px;
-    }
-}
-
-@media (max-width: 250px) {
-    .container{
-        width: 200px;
-
-    }
-}
 
 
