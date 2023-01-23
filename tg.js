@@ -3,7 +3,7 @@ const searchParams = new URLSearchParams(urlData);
 
 let tg = window.Telegram.WebApp;
 const testElement = document.getElementById("itc-slider_wrapper_id")
-testElement.style.minHeight = (tg.viewportHeight - 124).toString()
+testElement.style.minHeight = (Number(tg.viewportHeight) - 124).toString() + "px";
 
 
 function generate_pages(pages){
