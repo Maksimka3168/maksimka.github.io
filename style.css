@@ -653,3 +653,9 @@ h1{
     color: var(--tg-theme-text-color);
 }
 
+@media (max-width: 400px) {
+    .container{
+        width: 360px;
+    }
+}
+
