@@ -29,15 +29,26 @@ let userData = {
 function getFormHTML(typeForm){ // Генерация самой формы с input
     const formElement = document.createElement("form")
     if (typeForm === "height"){
-        const inputElement = document.createElement("input")
-        // const h3Element = document.createElement("h3")
-        // h3Element.innerHTML = "Ввод возраста"
-        inputElement.type = "text"
-        inputElement.id =  "input" + typeForm;
-        inputElement.className = "form__input-" + typeForm;
-        inputElement.placeholder = "Введите свой рост"
-        // formElement.append(h3Element);
-        formElement.append(inputElement);
+        const titleBlock = document.createElement("h3")
+        titleBlock.innerHTML = "Ввод роста"
+        formElement.append(titleBlock);
+        // const inputElement = document.createElement("input")
+        // // const h3Element = document.createElement("h3")
+        // // h3Element.innerHTML = "Ввод возраста"
+        // inputElement.type = "text"
+        // inputElement.id =  "input" + typeForm;
+        // inputElement.className = "form__input-" + typeForm;
+        // inputElement.placeholder = "Введите свой рост"
+        // // formElement.append(h3Element);
+        // formElement.append(inputElement);
+    } else if (typeForm === "weight"){
+        const titleBlock = document.createElement("h3")
+        titleBlock.innerHTML = "Ввод роста"
+        formElement.append(titleBlock);
+    } else if (typeForm === "type") {
+        const titleBlock = document.createElement("h3")
+        titleBlock.innerHTML = "Ввод типажа"
+        formElement.append(titleBlock);
     }
     return formElement;
 }
@@ -49,10 +60,15 @@ function generate_form_profile(page){
     if (paramReg !== null){
         const paramsReg = paramReg.split(",")
         paramsReg.forEach((element) =>{
-            if (element === "height"){
-                const formInput = getFormHTML(element);
-                blockDiv.append(formInput);
-            }
+            const formInput = getFormHTML(element);
+            blockDiv.append(formInput);
+            // if (element === "height"){
+            //     const formInput = getFormHTML(element);
+            //     blockDiv.append(formInput);
+            // } else if (element === "weight") {
+            //     const formInput = getFormHTML(element);
+            //     blockDiv.append(formInput);
+            // }
         })
     }
 }
