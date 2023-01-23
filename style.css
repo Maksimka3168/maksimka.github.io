@@ -643,5 +643,13 @@ h1{
     border-bottom: 1px solid #6b6b6b;
 }
 
+/* STYLE TG WEB*/
 
+.tg-web__bg-color{
+    background-color: var(--tg-theme-bg-color);
+}
+
+.tg-web__text-color{
+    color: var(--tg-theme-text-color);
+}
 
