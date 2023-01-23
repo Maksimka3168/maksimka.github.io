@@ -2,8 +2,9 @@ const urlData = document.location.search;
 const searchParams = new URLSearchParams(urlData);
 
 let tg = window.Telegram.WebApp;
-const testElement = document.getElementById("test_el")
-testElement.innerText = tg.viewportHeight.toString()
+const testElement = document.getElementById("itc-slider_wrapper_id")
+testElement.style.minHeight = (tg.viewportHeight - 124).toString()
+
 
 function generate_pages(pages){
     const blockDiv = document.getElementById("itc-slider__items")
