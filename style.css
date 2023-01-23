@@ -649,5 +649,10 @@ h1{
     }
 }
 
+@media (max-width: 250px) {
+    .container{
+        width: 200px;
+    }
+}
 
 
