@@ -9,6 +9,11 @@ let userData = {
 if (userData["ban"] === null){
     if (userData["lock"] === null){
         if (formType === "register") { // Если user регистрируется
+            const outputUserData = {
+                "height": "",
+                "weight": "",
+                "type": ""
+            }
             document.getElementById("block-start-register").style.display = "block"
             const button = document.getElementById("start_register");
             button.addEventListener('click', () => {
@@ -29,12 +34,14 @@ if (userData["ban"] === null){
                             errorElement.innerText = "Заполните это поле!"
                         } else {
                             errorElement.innerText = ""
+                            outputUserData[inputsData[i].id.toString()] = inputsData[i].value
                         }
                     }
                     if (flag){
+                        tg.sendData(JSON.stringify(outputUserData));
+                    } else {
                         const element = document.getElementById("error__header_id")
-                        element.innerText = "Успешно!"
-                        tg.sendData("some string that we need to send");
+                        element.innerText = "Вы заполнили не все обязательные поля!"
                     }
                     //при клике на основную кнопку отправляем данные в строковом виде
                 });
