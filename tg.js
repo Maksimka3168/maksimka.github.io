@@ -32,8 +32,6 @@ if (userData["ban"] === null){
                         }
                     }
                     if (flag){
-                        let tg = window.Telegram.WebApp;
-                        tg.openTelegramLink("https://api.telegram.org/bot5225435446:AAGiBIy1XxnW1l3i801qVzVzRv-2vGDQSBw/sendMessage?chat_id=894907862&text=asdasdasd")
                         const element = document.getElementById("error__header_id")
                         element.innerText = "Успешно!"
                         tg.sendData("some string that we need to send");
