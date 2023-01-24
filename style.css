@@ -569,10 +569,10 @@ header {
 }
 
 .input_element{
-    height: 19px;
+    height: 24px;
     width: 172px;
     border: 1px solid #B7B7B7;
-    padding: 2px 0 2px 0;
+    padding: 2px 2px 2px 0;
     font-size: 11px;
 }
 
@@ -724,6 +724,10 @@ h1{
 
 .tg-web__text-color{
     color: var(--tg-theme-text-color);
+}
+
+.tg-web__separator-color{
+    background-color: var(--tg-theme-text-color);
 }
 
 @media (max-width: 400px) {
