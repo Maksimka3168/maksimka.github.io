@@ -1,5 +1,10 @@
 const urlData = document.location.search;
 const searchParams = new URLSearchParams(urlData);
+let tg = window.Telegram.WebApp;
+if (tg.MainButton.isVisible()){
+    tg.MainButton.hide()
+}
+
 let formType = searchParams.get("form")
 let userData = {
     "lock": searchParams.get("lock"), // Закрыто ли заполнение профиля
@@ -16,7 +21,6 @@ if (userData["ban"] === null){
                 document.getElementById("block-start-register").style.display = "none";
                 document.getElementById("register").style.display = "block";
                 // ----------------------------
-                let tg = window.Telegram.WebApp;
                 tg.MainButton.setText("Завершить регистрацию")
                 tg.MainButton.show()
                 Telegram.WebApp.onEvent('mainButtonClicked', function(){
