@@ -1,6 +1,3 @@
-let tg = window.Telegram.WebApp;
-tg.MainButton.setText("Завершить регистрацию")
-tg.MainButton.show()
 const urlData = document.location.search;
 const searchParams = new URLSearchParams(urlData);
 let formType = searchParams.get("form")
@@ -20,6 +17,8 @@ if (userData["ban"] === null){
                 document.getElementById("register").style.display = "block";
                 // ----------------------------
                 let tg = window.Telegram.WebApp;
+                tg.MainButton.setText("Завершить регистрацию")
+                tg.MainButton.show()
                 Telegram.WebApp.onEvent('mainButtonClicked', function(){
                     const inputsData = document.getElementsByClassName("input_element")
                     let flag = true;
@@ -37,7 +36,6 @@ if (userData["ban"] === null){
                     }
                     //при клике на основную кнопку отправляем данные в строковом виде
                 });
-                tg.MainButton.show()
 
             })
         } else if (formType === "profile"){ // здесь делаем дозаполнение профиля

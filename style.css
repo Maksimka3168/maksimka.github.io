@@ -727,7 +727,7 @@ h1{
 }
 
 .tg-web__separator-color{
-    background-color: var(--tg-theme-text-color);
+    border-color: var(--tg-theme-text-color);
 }
 
 @media (max-width: 400px) {
