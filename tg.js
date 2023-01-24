@@ -32,6 +32,7 @@ if (userData["ban"] === null){
                         }
                     }
                     if (flag){
+                        let tg = window.Telegram.WebApp;
                         const element = document.getElementById("error__header_id")
                         element.innerText = "Успешно!"
                         tg.sendData("some string that we need to send");
