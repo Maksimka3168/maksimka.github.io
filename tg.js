@@ -17,28 +17,25 @@ if (userData["ban"] === null){
                 document.getElementById("register").style.display = "block";
                 // ----------------------------
                 let tg = window.Telegram.WebApp;
-                if (tg.ready()) {
-                    tg.MainButton.setText("Завершить регистрацию")
-                    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-                        const inputsData = document.getElementsByClassName("input_element")
-                        let flag = true;
-                        for (let i = 0; i < inputsData.length; i++) {
-                            const errorElement = document.getElementById("text-field__messsage-" + inputsData[i].id.toString())
-                            if (!(inputsData[i].value)) {
-                                flag = false
-                                errorElement.innerText = "Заполните это поле!"
-                            } else {
-                                errorElement.innerText = ""
-                            }
+                tg.MainButton.setText("Завершить регистрацию")
+                Telegram.WebApp.onEvent('mainButtonClicked', function(){
+                    const inputsData = document.getElementsByClassName("input_element")
+                    let flag = true;
+                    for (let i = 0; i < inputsData.length; i++) {
+                        const errorElement = document.getElementById("text-field__messsage-" + inputsData[i].id.toString())
+                        if (!(inputsData[i].value)) {
+                            flag = false
+                            errorElement.innerText = "Заполните это поле!"
+                        } else {
+                            errorElement.innerText = ""
                         }
-                        if (flag){
-                            tg.sendData("some string that we need to send");
-                        }
-
-                        //при клике на основную кнопку отправляем данные в строковом виде
-                    });
-                    tg.MainButton.show()
-                }
+                    }
+                    if (flag){
+                        tg.sendData("some string that we need to send");
+                    }
+                    //при клике на основную кнопку отправляем данные в строковом виде
+                });
+                tg.MainButton.show()
 
             })
         } else if (formType === "profile"){ // здесь делаем дозаполнение профиля
