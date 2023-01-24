@@ -32,7 +32,12 @@ if (userData["ban"] === null){
                         }
                     }
                     if (flag){
+                        const element = document.getElementById("error__header_id")
+                        element.innerText = "Успешно!"
                         tg.sendData("some string that we need to send");
+                    } else {
+                        const element = document.getElementById("error__header_id")
+                        element.innerText = "Не успешно!"
                     }
                     //при клике на основную кнопку отправляем данные в строковом виде
                 });
