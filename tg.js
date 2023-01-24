@@ -1,76 +1,9 @@
 const urlData = document.location.search;
 const searchParams = new URLSearchParams(urlData);
-
-let tg = window.Telegram.WebApp;
-const testElement = document.getElementById("itc-slider_wrapper_id")
-testElement.style.minHeight = (Number(tg.viewportHeight) - 124).toString() + "px";
-
-
-function generate_pages(pages){
-    const blockDiv = document.getElementById("itc-slider__items")
-    for (let i = 1; i <= pages; i++){
-        const blockPage = document.createElement("div")
-        blockPage.className = "itc-slider__item"
-        blockPage.id = "page_" + i.toString()
-        blockDiv.append(blockPage)
-    }
-}
-
 let formType = searchParams.get("form")
 let userData = {
     "lock": searchParams.get("lock"), // Закрыто ли заполнение профиля
     "ban": searchParams.get("ban"), // Блокировка пользователя
-    "pages": searchParams.get("pages"), // Количество страничек заполнения профиля
-    "height": searchParams.get("height"), // Данные о росте
-    "weight": searchParams.get("weight"), // Данные о весе
-    "type": searchParams.get("type") // Данные о типаже
-}
-
-function getFormHTML(typeForm){ // Генерация самой формы с input
-    const formElement = document.createElement("form")
-    if (typeForm === "height"){
-        const titleBlock = document.createElement("h3")
-        titleBlock.innerHTML = "Ввод роста"
-        formElement.append(titleBlock);
-        // const inputElement = document.createElement("input")
-        // // const h3Element = document.createElement("h3")
-        // // h3Element.innerHTML = "Ввод возраста"
-        // inputElement.type = "text"
-        // inputElement.id =  "input" + typeForm;
-        // inputElement.className = "form__input-" + typeForm;
-        // inputElement.placeholder = "Введите свой рост"
-        // // formElement.append(h3Element);
-        // formElement.append(inputElement);
-    } else if (typeForm === "weight"){
-        const titleBlock = document.createElement("h3")
-        titleBlock.innerHTML = "Ввод роста"
-        formElement.append(titleBlock);
-    } else if (typeForm === "type") {
-        const titleBlock = document.createElement("h3")
-        titleBlock.innerHTML = "Ввод типажа"
-        formElement.append(titleBlock);
-    }
-    return formElement;
-}
-
-function generate_form_profile(page){
-    console.log(page);
-    const blockDiv = document.getElementById("page_" + page.toString())
-    const paramReg = searchParams.get("page_" + page.toString())
-    if (paramReg !== null){
-        const paramsReg = paramReg.split(",")
-        paramsReg.forEach((element) =>{
-            const formInput = getFormHTML(element);
-            blockDiv.append(formInput);
-            // if (element === "height"){
-            //     const formInput = getFormHTML(element);
-            //     blockDiv.append(formInput);
-            // } else if (element === "weight") {
-            //     const formInput = getFormHTML(element);
-            //     blockDiv.append(formInput);
-            // }
-        })
-    }
 }
 
 if (userData["ban"] === null){
@@ -82,19 +15,31 @@ if (userData["ban"] === null){
                 // Обнуляем то, что нам не нужно
                 document.getElementById("block-start-register").style.display = "none";
                 document.getElementById("register").style.display = "block";
-                // Создаём блоки страничек
-                generate_pages(Number(userData['pages']))
                 // ----------------------------
-                const btnSlider = document.getElementById("itc-slider__ind")
-                for (let item = 1;item <= Number(userData['pages']); item++){
-                    const liElement = document.createElement("li")
-                    liElement.className = "itc-slider__indicator"
-                    liElement.setAttribute("data-slide-to", (item - 1).toString())
-                    liElement.innerHTML = item.toString()
-                    btnSlider.append(liElement)
-                    generate_form_profile(item);
+                let tg = window.Telegram.WebApp;
+                if (tg.ready()) {
+                    tg.MainButton.setText("Завершить регистрацию")
+                    Telegram.WebApp.onEvent('mainButtonClicked', function(){
+                        const inputsData = document.getElementsByClassName("input_element")
+                        let flag = true;
+                        for (let i = 0; i < inputsData.length; i++) {
+                            const errorElement = document.getElementById("text-field__messsage-" + inputsData[i].id.toString())
+                            if (!(inputsData[i].value)) {
+                                flag = false
+                                errorElement.innerText = "Заполните это поле!"
+                            } else {
+                                errorElement.innerText = ""
+                            }
+                        }
+                        if (flag){
+                            tg.sendData("some string that we need to send");
+                        }
+
+                        //при клике на основную кнопку отправляем данные в строковом виде
+                    });
+                    tg.MainButton.show()
                 }
-                ItcSlider.createInstances();
+
             })
         } else if (formType === "profile"){ // здесь делаем дозаполнение профиля
             document.getElementById("profile").style.display = "block"

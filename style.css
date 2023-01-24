@@ -511,7 +511,13 @@ template {
     position: relative;
 }
 
-
+.error__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-weight: 200;
+}
 
 header {
     height: 74px;
@@ -560,6 +566,30 @@ header {
 
 .register-page:hover{
     background: rgba(154, 205, 236, 0.44);
+}
+
+.input_element{
+    height: 19px;
+    width: 172px;
+    border: 1px solid #B7B7B7;
+    padding: 2px 0 2px 0;
+    font-size: 11px;
+}
+
+.block-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.text-field__messsage{
+    color: red;
+    display: flex;
+    justify-content: right;
+    font-size: 12px;
+    font-weight: 200;
 }
 
 /* НАЧАЛЬНАЯ СТРАНИЦА ПРИ ЗАПОЛНЕНИИ ПРОФИЛЯ */
@@ -631,6 +661,27 @@ h1{
     align-items: center;
 }
 
+.block-separator{
+    width: 99%;
+    border-left: 1px solid #000000;
+    margin-left: 7px;
+    height: 40px;
+}
+
+.block-input-data{
+    display: flex;
+    align-items: center;
+    margin: 10px 0 10px 0;
+}
+
+.block-circle{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
 /* ВСЕМ DISPLAY: NONE */
 
 .block-profile, .block-start-register, .block-register, .register__page{
@@ -642,6 +693,28 @@ h1{
     height: 30px;
     border-bottom: 1px solid #6b6b6b;
 }
+
+/* CUSTOM */
+
+.d-flex-space-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex-align-items{
+    display: flex;
+    align-items: center;
+}
+
+.fs-10{
+    font-size: 10px;
+}
+
 
 /* STYLE TG WEB*/
 
