@@ -1,10 +1,5 @@
 const urlData = document.location.search;
 const searchParams = new URLSearchParams(urlData);
-let tg = window.Telegram.WebApp;
-if (tg.MainButton.isVisible()){
-    tg.MainButton.hide()
-}
-
 let formType = searchParams.get("form")
 let userData = {
     "lock": searchParams.get("lock"), // Закрыто ли заполнение профиля
