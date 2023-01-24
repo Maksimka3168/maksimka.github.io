@@ -16,6 +16,7 @@ if (userData["ban"] === null){
                 document.getElementById("block-start-register").style.display = "none";
                 document.getElementById("register").style.display = "block";
                 // ----------------------------
+                let tg = window.Telegram.WebApp;
                 tg.MainButton.setText("Завершить регистрацию")
                 tg.MainButton.show()
                 Telegram.WebApp.onEvent('mainButtonClicked', function(){
