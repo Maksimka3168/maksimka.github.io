@@ -1,3 +1,5 @@
+let tg = window.Telegram.WebApp;
+tg.MainButton.show()
 const urlData = document.location.search;
 const searchParams = new URLSearchParams(urlData);
 let formType = searchParams.get("form")
