@@ -595,8 +595,8 @@ header {
 /* НАЧАЛЬНАЯ СТРАНИЦА ПРИ ЗАПОЛНЕНИИ ПРОФИЛЯ */
 
 .icon {
-    margin-top: 34px;
-    margin-bottom: 69px;
+    margin-top: 25px;
+    margin-bottom: 45px;
 }
 
 .main__wrap{
@@ -611,10 +611,10 @@ header {
 }
 
 h1{
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 34px;
     line-height: 44px;
 
 }
