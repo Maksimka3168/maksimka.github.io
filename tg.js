@@ -32,6 +32,9 @@ if (userData["ban"] === null){
                     optHeight.src = "height_male.png"
                     optWeight.src = "weight_male.png"
                     optType.src = "type_male.png"
+                    optHeight.width = 15;
+                    optWeight.width = 15;
+                    optType.width = 15;
                     emodjiHeight.appendChild(optHeight)
                     emodjiWeight.appendChild(optWeight)
                     emodjiType.appendChild(optType)
@@ -66,6 +69,9 @@ if (userData["ban"] === null){
                         optHeight.src = "height_female.png"
                         optWeight.src = "weight_female.png"
                         optType.src = "type_female.png"
+                        optHeight.width = 15;
+                        optWeight.width = 15;
+                        optType.width = 15;
                         emodjiHeight.appendChild(optHeight)
                         emodjiWeight.appendChild(optWeight)
                         emodjiType.appendChild(optType)
