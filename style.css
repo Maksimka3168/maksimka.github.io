@@ -675,9 +675,16 @@ h1{
 }
 
 .block-circle{
-    width: 15px;
-    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
+}
+
+.block-circle img{
+    width: 20px;
 }
 
 /* ВСЕМ DISPLAY: NONE */
