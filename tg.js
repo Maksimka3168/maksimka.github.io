@@ -4,6 +4,7 @@ let formType = searchParams.get("form")
 let userData = {
     "lock": searchParams.get("lock"), // Закрыто ли заполнение профиля
     "ban": searchParams.get("ban"), // Блокировка пользователя
+    "gender": searchParams.get("gender"), // Гендер пользователя
 }
 
 if (userData["ban"] === null){
@@ -17,12 +18,68 @@ if (userData["ban"] === null){
             document.getElementById("block-start-register").style.display = "block"
             const button = document.getElementById("start_register");
             button.addEventListener('click', () => {
+                const weightDiv = document.getElementById("weight");
+                const heightDiv = document.getElementById("height");
+                const typeDiv = document.getElementById("type");
+                // Разделяем по гендеру
+                if (userData["gender"] === "male"){
+                    let typeArray = ["Европейский", "Африканский", "Азиатский", "Кавказский", "Средиземноморский"];
+                    let weightMin = 70;
+                    let weightMax = 140;
+                    let heightMin = 150;
+                    let heightMax = 210;
+                    for (let i = weightMin; i<=weightMax; i += 5){
+                        let opt = document.createElement('option');
+                        opt.value = i.toString();
+                        opt.innerHTML = i.toString();
+                        weightDiv.appendChild(opt);
+                    }
+                    for (let i = heightMin; i<=heightMax; i++){
+                        let opt = document.createElement('option');
+                        opt.value = i.toString();
+                        opt.innerHTML = i.toString();
+                        heightDiv.appendChild(opt);
+                    }
+                    typeArray.forEach((element) => {
+                        let opt = document.createElement('option');
+                        opt.value = element;
+                        opt.innerHTML = element;
+                        typeDiv.appendChild(opt);
+                    })
+                } else {
+                    if (userData["gender"] === "female") {
+                        let typeArray = ["Мулатка", "Азитка", "Славянка", "Африканка", "Европейка"];
+                        let weightMin = 40;
+                        let weightMax = 80;
+                        let heightMin = 150;
+                        let heightMax = 210;
+                        for (let i = weightMin; i<=weightMax; i += 5){
+                            let opt = document.createElement('option');
+                            opt.value = i.toString();
+                            opt.innerHTML = i.toString();
+                            weightDiv.appendChild(opt);
+                        }
+                        for (let i = heightMin; i<=heightMax; i++){
+                            let opt = document.createElement('option');
+                            opt.value = i.toString();
+                            opt.innerHTML = i.toString();
+                            heightDiv.appendChild(opt);
+                        }
+                        typeArray.forEach((element) => {
+                            let opt = document.createElement('option');
+                            opt.value = element;
+                            opt.innerHTML = element;
+                            typeDiv.appendChild(opt);
+                        })
+                    }
+
+                }
                 // Обнуляем то, что нам не нужно
                 document.getElementById("block-start-register").style.display = "none";
                 document.getElementById("register").style.display = "block";
                 // ----------------------------
                 let tg = window.Telegram.WebApp;
-                tg.MainButton.setText("Завершить регистрацию")
+                tg.MainButton.setText("Дальше 👉")
                 tg.MainButton.show()
                 Telegram.WebApp.onEvent('mainButtonClicked', function(){
                     const inputsData = document.getElementsByClassName("input_element")
