@@ -21,8 +21,20 @@ if (userData["ban"] === null){
                 const weightDiv = document.getElementById("weight");
                 const heightDiv = document.getElementById("height");
                 const typeDiv = document.getElementById("type");
+                const emodjiHeight = document.getElementById("img-height");
+                const emodjiWeight = document.getElementById("img-weight");
+                const emodjiType = document.getElementById("img-type");
                 // Разделяем по гендеру
                 if (userData["gender"] === "male"){
+                    let optHeight = document.createElement('img');
+                    let optWeight = document.createElement('img');
+                    let optType = document.createElement('img');
+                    optHeight.src = "height_male.png"
+                    optWeight.src = "weight_male.png"
+                    optType.src = "type_male.png"
+                    emodjiHeight.appendChild(optHeight)
+                    emodjiWeight.appendChild(optWeight)
+                    emodjiType.appendChild(optType)
                     let typeArray = ["Европейский", "Африканский", "Азиатский", "Кавказский", "Средиземноморский"];
                     let weightMin = 70;
                     let weightMax = 140;
@@ -48,6 +60,15 @@ if (userData["ban"] === null){
                     })
                 } else {
                     if (userData["gender"] === "female") {
+                        let optHeight = document.createElement('img');
+                        let optWeight = document.createElement('img');
+                        let optType = document.createElement('img');
+                        optHeight.src = "height_female.png"
+                        optWeight.src = "weight_female.png"
+                        optType.src = "type_female.png"
+                        emodjiHeight.appendChild(optHeight)
+                        emodjiWeight.appendChild(optWeight)
+                        emodjiType.appendChild(optType)
                         let typeArray = ["Мулатка", "Азитка", "Славянка", "Африканка", "Европейка"];
                         let weightMin = 40;
                         let weightMax = 80;

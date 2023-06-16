@@ -677,8 +677,6 @@ h1{
 .block-circle{
     width: 15px;
     height: 15px;
-    border: 1px solid #000000;
-    border-radius: 10px;
     margin-right: 10px;
 }
 
